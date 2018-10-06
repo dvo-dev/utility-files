@@ -1,14 +1,3 @@
-# The important stuff
-alias ls='ls --color=auto'
-alias ls='ls --color=auto -GFh'
-alias vim="vim -S ~/.vimrc"
-alias vi="vim"
-alias make="make -j"
-alias ubuntu="docker run -i -t ubuntu-16.04 /bin/bash"
-# alias pintosDocker="docker run -it ubuntu-16.04:pintos /bin/bash"
-alias pintosDocker="docker run -ti --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix ubuntu-16.04:pintos"
-
-
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 # source ~/.bash_profile
@@ -24,7 +13,7 @@ POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
 POWERLEVEL9K_TIME_FORMAT="%F{black}\uf017 %D{%I:%M:%S}%f"
 # POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon dir rbenv vcs)
-POWERLEVEL9K_MODE='nerdfont-complete'
+POWERLEVEL9K_MODE='awesome-complete'
 # ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # Set list of themes to load
@@ -81,7 +70,7 @@ plugins=(
   zsh-autosuggestions
 )
 
-source $ZSH/oh-my-zsh.sh
+# source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
@@ -91,17 +80,17 @@ source $ZSH/oh-my-zsh.sh
 export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='vim'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
+export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -111,6 +100,14 @@ export LANG=en_US.UTF-8
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias ls='ls --color=auto'
+alias ls='ls --color=auto -GFh'
+alias vim="vim -S ~/.vimrc"
+alias vi="vim"
+alias make="make -j"
+alias ubuntu="docker run -i -t ubuntu-16.04 /bin/bash"
+# alias pintosDocker="docker run -it ubuntu-16.04:pintos /bin/bash"
+alias pintosDocker="docker run -ti --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix ubuntu-16.04:pintos"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
