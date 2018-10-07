@@ -109,6 +109,21 @@ alias ubuntu="docker run -i -t ubuntu-16.04 /bin/bash"
 # alias pintosDocker="docker run -it ubuntu-16.04:pintos /bin/bash"
 alias pintosDocker="docker run -ti --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix ubuntu-16.04:pintos"
 
+setopt sharehistory
+setopt incappendhistory
+setopt pushdignoredups
+setopt histexpiredupsfirst
+setopt longlistjobs
+setopt alwaystoend
+setopt autocd
+setopt autopushd
+setopt completeinword
+setopt interactivecomments
+setopt histignorespace
+setopt histignoredups
+setopt flowcontrol
+setopt pushdminus
+
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 
