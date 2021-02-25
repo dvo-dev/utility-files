@@ -11,6 +11,14 @@ alias vim="vim -S ~/.vimrc"
 alias vi="vim"
 alias make="make -j"
 
+git() {
+        if [[ $@ == "tree" ]]; then
+                command git log --all --graph --decorate --oneline --simplify-by-decoration
+        else
+                command git "$@"
+        fi
+}
+
 LS_COLORS='ow=01;36;40'
 PS1='[\u@\h \W]\$ '
 
