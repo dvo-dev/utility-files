@@ -14,6 +14,8 @@ alias make="make -j"
 git() {
         if [[ $@ == "tree" ]]; then
                 command git log --all --graph --decorate --oneline --simplify-by-decoration
+        elif [[ $@ == "prune-branches" ]]; then
+                command git fetch -p && git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D
         else
                 command git "$@"
         fi
