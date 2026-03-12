@@ -21,6 +21,18 @@ git() {
         fi
 }
 
+code() {
+  local cli
+  cli="$(find /home/vscode/.vscode-remote/bin/*/bin/remote-cli/code -maxdepth 0 2>/dev/null | tail -1)"
+  if [ -n "$cli" ]; then
+    "$cli" "$@"
+  else
+    echo "VS Code remote CLI not found" >&2
+    return 1
+  fi
+}
+
+
 LS_COLORS='ow=01;36;40'
 PS1='[\u@\h \W]\$ '
 
